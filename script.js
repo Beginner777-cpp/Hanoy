@@ -18,12 +18,14 @@ var btns = document.querySelectorAll('.btn');
 for (let i = 0; i < btns.length; i++) {
     if (i == 0) {
         btns[i].addEventListener('click', () => {
-            var temp = document.createElement('div');
-            temp.className = blocks[0].children[0].getAttribute('class');
-            // blocks[1].children[0].appendChild(document.createElement('div'));
-            // blocks[1].setAttribute('class', blocks[0].children[0].getAttribute('class'));
-            blocks[0].children[0].remove();
-            blocks[1].prepend(temp);
+            if (blocks[0].children.length > 2) {
+                var temp = document.createElement('div');
+                temp.className = blocks[0].children[0].getAttribute('class');
+                // blocks[1].children[0].appendChild(document.createElement('div'));
+                // blocks[1].setAttribute('class', blocks[0].children[0].getAttribute('class'));
+                blocks[0].children[0].remove();
+                blocks[1].prepend(temp);
+            }
         })
     }
 }
