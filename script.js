@@ -22,11 +22,10 @@ for (let i = 0; i < btns.length; i++) {
                 var temp = document.createElement('div');
                 temp.className = blocks[0].children[0].getAttribute('class');
                 if (blocks[1].children.length > 0) {
-                    if (temp.getAttribute('class') > blocks[1].lastChild) {
+                    if (temp.getAttribute('class') > blocks[1].children[blocks[1].children.length - 1].getAttribute('class')) {
                         alert('Нельзя ложить большой элемент на меньший');
                     }
-                }
-                else {
+                } else {
                     blocks[0].children[0].remove();
                     blocks[1].prepend(temp);
                 }
@@ -38,8 +37,17 @@ for (let i = 0; i < btns.length; i++) {
             if (blocks[0].children.length > 0) {
                 var temp = document.createElement('div');
                 temp.className = blocks[0].children[0].getAttribute('class');
-                blocks[0].children[0].remove();
-                blocks[2].prepend(temp);
+                if (blocks[2].children.length > 0) {
+                    if (temp.getAttribute('class') > blocks[2].children[blocks[2].children.length - 1].getAttribute('class')) {
+                        alert('Нельзя ложить большой элемент на меньший');
+                    } else {
+                        blocks[0].children[0].remove();
+                        blocks[2].prepend(temp);
+                    }
+                } else {
+                    blocks[0].children[0].remove();
+                    blocks[2].prepend(temp);
+                }
             }
         })
     }
@@ -48,8 +56,19 @@ for (let i = 0; i < btns.length; i++) {
             if (blocks[1].children.length > 0) {
                 var temp = document.createElement('div');
                 temp.className = blocks[1].children[0].getAttribute('class');
-                blocks[1].children[0].remove();
-                blocks[0].prepend(temp);
+                if (blocks[0].children.length > 0) {
+                    if (temp.getAttribute('class') > blocks[0].children[blocks[0].children.length - 1].getAttribute('class')) {
+                        alert('Нельзя ложить большой элемент на меньший');
+                    } else {
+                        blocks[1].children[0].remove();
+                        blocks[0].prepend(temp);
+                    }
+                } else {
+                    blocks[1].children[0].remove();
+                    blocks[0].prepend(temp);
+                }
+
+
             }
         })
     }
@@ -58,8 +77,16 @@ for (let i = 0; i < btns.length; i++) {
             if (blocks[1].children.length > 0) {
                 var temp = document.createElement('div');
                 temp.className = blocks[1].children[0].getAttribute('class');
-                blocks[1].children[0].remove();
-                blocks[2].prepend(temp);
+
+                if (blocks[2].children.length > 0) {
+                    if (temp.getAttribute('class') > blocks[3].children[blocks[3].children.length - 1].getAttribute('class')) {
+                        alert('Нельзя ложить большой элемент на меньший');
+                    }
+                } else {
+                    blocks[1].children[0].remove();
+                    blocks[2].prepend(temp);
+                }
+
             }
         })
     }
@@ -68,8 +95,19 @@ for (let i = 0; i < btns.length; i++) {
             if (blocks[2].children.length > 0) {
                 var temp = document.createElement('div');
                 temp.className = blocks[2].children[0].getAttribute('class');
-                blocks[2].children[0].remove();
-                blocks[0].prepend(temp);
+
+                if (blocks[0].children.length > 0) {
+                    if (temp.getAttribute('class') > blocks[0].children[blocks[0].children.length - 1].getAttribute('class')) {
+                        alert('Нельзя ложить большой элемент на меньший');
+                    } else {
+                        blocks[2].children[0].remove();
+                        blocks[0].prepend(temp);
+                    }
+                } else {
+                    blocks[2].children[0].remove();
+                    blocks[0].prepend(temp);
+                }
+
             }
         })
     }
@@ -78,8 +116,19 @@ for (let i = 0; i < btns.length; i++) {
             if (blocks[2].children.length > 0) {
                 var temp = document.createElement('div');
                 temp.className = blocks[2].children[0].getAttribute('class');
-                blocks[2].children[0].remove();
-                blocks[1].prepend(temp);
+
+                if (blocks[1].children.length > 0) {
+                    if (temp.getAttribute('class') > blocks[1].children[blocks[1].children.length - 1].getAttribute('class')) {
+                        alert('Нельзя ложить большой элемент на меньший');
+                    } else {
+                        blocks[2].children[0].remove();
+                        blocks[1].prepend(temp);
+                    }
+                } else {
+                    blocks[2].children[0].remove();
+                    blocks[1].prepend(temp);
+                }
+
             }
         })
     }
