@@ -34,6 +34,7 @@ for (let i = 0; i < btns.length; i++) {
                 }
             }
         })
+        checkWin()
     }
     if (i == 1) {
         btns[i].addEventListener('click', () => {
@@ -54,6 +55,7 @@ for (let i = 0; i < btns.length; i++) {
                 }
             }
         })
+        checkWin()
     }
     if (i == 2) {
         btns[i].addEventListener('click', () => {
@@ -75,6 +77,7 @@ for (let i = 0; i < btns.length; i++) {
 
             }
         })
+        checkWin()
     }
     if (i == 3) {
         btns[i].addEventListener('click', () => {
@@ -96,6 +99,7 @@ for (let i = 0; i < btns.length; i++) {
 
             }
         })
+        checkWin()
     }
     if (i == 4) {
         btns[i].addEventListener('click', () => {
@@ -116,6 +120,7 @@ for (let i = 0; i < btns.length; i++) {
 
             }
         })
+        checkWin()
     }
     if (i == 5) {
         btns[i].addEventListener('click', () => {
@@ -137,6 +142,15 @@ for (let i = 0; i < btns.length; i++) {
 
             }
         })
+        checkWin()
     }
 }
 
+function checkWin() {
+    var temp = document.querySelector('.block2');
+    if (temp.children.length == 8) {
+        alert("WIN");
+    } else {
+
+    }
+} 
