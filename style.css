@@ -5,6 +5,12 @@
     text-decoration: none;
 }
 
+body {
+    background: url(quiz_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .description {
     width: 80%;
     text-align: center;
@@ -124,8 +130,11 @@
 .btn {
     margin: 0 10px;
     background: grey;
+    font-size: 20px;
 }
-
+.btn:hover{
+    cursor: pointer;
+}
 .solve_btn {
     display: block;
     width: fit-content;
@@ -136,9 +145,11 @@
     border-radius: 50px;
     margin-top: 30px;
 }
-.solve_btn:focus{
+
+.solve_btn:focus {
     outline: none;
 }
-.solve_btn:hover{
+
+.solve_btn:hover {
     cursor: pointer;
 }
