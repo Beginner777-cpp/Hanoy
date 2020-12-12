@@ -60,6 +60,8 @@
     background: green;
     height: 20px;
     border: 2px solid black;
+    text-align: center;
+    font-size: 20px;
 }
 
 .box1 {

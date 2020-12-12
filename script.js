@@ -1,15 +1,4 @@
-// var block1 = document.querySelector('.block1');
-// var block2 = document.querySelector('.block2');
-// var block3 = document.querySelector('.block3');
 var blocks = document.querySelectorAll('.block');
-// var box1 = document.querySelector('.box1');
-// var box2 = document.querySelector('.box2');
-// var box3 = document.querySelector('.box3');
-// var box4 = document.querySelector('.box4');
-// var box5 = document.querySelector('.box5');
-// var box6 = document.querySelector('.box6');
-// var box7 = document.querySelector('.box7');
-// var box8 = document.querySelector('.box8');
 var boxes = document.querySelectorAll('.box');
 
 
@@ -33,6 +22,7 @@ for (let i = 0; i < btns.length; i++) {
                     blocks[1].prepend(temp);
                 }
             }
+            BoxNumber();
         })
         checkWin()
     }
@@ -54,6 +44,7 @@ for (let i = 0; i < btns.length; i++) {
                     blocks[2].prepend(temp);
                 }
             }
+            BoxNumber();
         })
         checkWin()
     }
@@ -76,6 +67,7 @@ for (let i = 0; i < btns.length; i++) {
 
 
             }
+            BoxNumber();
         })
         checkWin()
     }
@@ -98,6 +90,7 @@ for (let i = 0; i < btns.length; i++) {
                 }
 
             }
+            BoxNumber();
         })
         checkWin()
     }
@@ -119,6 +112,7 @@ for (let i = 0; i < btns.length; i++) {
                 }
 
             }
+            BoxNumber();
         })
         checkWin()
     }
@@ -141,6 +135,7 @@ for (let i = 0; i < btns.length; i++) {
                 }
 
             }
+            BoxNumber();
         })
         checkWin()
     }
@@ -153,4 +148,12 @@ function checkWin() {
     } else {
 
     }
-} 
+}
+
+function BoxNumber() {
+    for (let i = 0; i < boxes.length; i++) {
+        let temp = document.querySelector(`.box${i + 1}`);
+        temp.innerHTML = i + 1;
+    }
+}
+BoxNumber();
