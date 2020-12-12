@@ -1,8 +1,7 @@
 var blocks = document.querySelectorAll('.block');
 var boxes = document.querySelectorAll('.box');
-
-
 var btns = document.querySelectorAll('.btn');
+var solve_btn = document.querySelector('.solve_btn')
 
 for (let i = 0; i < btns.length; i++) {
     if (i == 0) {
@@ -23,8 +22,9 @@ for (let i = 0; i < btns.length; i++) {
                 }
             }
             BoxNumber();
+            checkWin();
         })
-        checkWin()
+
     }
     if (i == 1) {
         btns[i].addEventListener('click', () => {
@@ -45,8 +45,9 @@ for (let i = 0; i < btns.length; i++) {
                 }
             }
             BoxNumber();
+            checkWin();
         })
-        checkWin()
+
     }
     if (i == 2) {
         btns[i].addEventListener('click', () => {
@@ -68,8 +69,9 @@ for (let i = 0; i < btns.length; i++) {
 
             }
             BoxNumber();
+            checkWin()
         })
-        checkWin()
+
     }
     if (i == 3) {
         btns[i].addEventListener('click', () => {
@@ -91,8 +93,9 @@ for (let i = 0; i < btns.length; i++) {
 
             }
             BoxNumber();
+            checkWin()
         })
-        checkWin()
+
     }
     if (i == 4) {
         btns[i].addEventListener('click', () => {
@@ -113,8 +116,9 @@ for (let i = 0; i < btns.length; i++) {
 
             }
             BoxNumber();
+            checkWin();
         })
-        checkWin()
+
     }
     if (i == 5) {
         btns[i].addEventListener('click', () => {
@@ -136,8 +140,9 @@ for (let i = 0; i < btns.length; i++) {
 
             }
             BoxNumber();
+            checkWin();
         })
-        checkWin()
+
     }
 }
 
@@ -157,3 +162,48 @@ function BoxNumber() {
     }
 }
 BoxNumber();
+var result = [];
+function Hanoi1(n, x, y, z) {
+
+    if (n <= 0)
+        return;
+    Hanoi1(n - 1, x, z, y);
+    let a = x + ' -&gt; ' + y
+    result.push(a);
+
+    Hanoi1(n - 1, z, y, x);
+
+    return;
+}
+Hanoi1(8, 1, 2, 3);
+function solution() {
+    var length = result.length;
+    var i = 0;
+    for (let i = 0; i < length; i++) {
+        setTimeout(() => {
+            for (let j = 0; j < btns.length; j++) {
+                if (btns[j].innerHTML == result[i]) {
+                    btns[j].click();
+                }
+            }
+        }, 200 * (i + 1));
+    }
+
+}
+for (let j = 0; j < btns.length; j++) {
+    btns[j].addEventListener('mousedown', () => {
+        btns[j].style.background = 'red';
+    })
+    btns[j].addEventListener('mouseup', () => {
+        btns[j].style.background = 'grey';
+    })
+}
+
+solve_btn.addEventListener('click', function () {
+
+    solve_btn.disabled = true;
+    solution();
+
+
+
+})
