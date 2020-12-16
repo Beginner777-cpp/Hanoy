@@ -186,7 +186,7 @@ function solution() {
                     btns[j].click();
                 }
             }
-        }, 500 * (i + 10));
+        }, 200 * (i + 5));
     }
 
 }
